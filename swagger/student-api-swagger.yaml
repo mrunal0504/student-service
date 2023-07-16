@@ -1,0 +1,183 @@
+openapi: 3.0.0
+info:
+  title: Student details microservice
+  version: 1.0.0
+paths:
+  /studentapp/v1/student:
+    post:
+      tags: 
+        - student
+      summary: Creates a new student
+      operationId: createStudent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          description: Student created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marks'
+        '400':
+          description: Bad request - Invalid input or missing required fields
+        '500':
+          description: Internal server error - Failed to create a student
+  /studentapp/v1/students:
+    get:
+      tags: 
+        - student
+      summary: Get all students
+      operationId: getStudents
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+        '404':
+          description: Resource not found
+        '500':
+          description: Internal server error - Failed to retrieve students
+  /studentapp/v1/student/{id}:
+    get:
+      summary: Get a student by ID
+      tags: 
+        - student
+      operationId: getStudentById
+      parameters:
+        - name: id
+          in: path
+          description: ID of the student
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '404':
+          description: Resource not found - No students available
+        '500':
+          description: Internal server error - Failed to retrieve students
+    put:
+      summary: Update a student by ID
+      tags: 
+        - student
+      operationId: updateStudentById
+      parameters:
+        - name: id
+          in: path
+          description: ID of the student
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Student'
+      responses:
+        '200':
+          description: Student updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Student'
+        '400':
+          description: Bad request - Invalid input or missing required fields
+        '404':
+          description: Resource not found - Student with the specified ID not found
+        '500':
+          description: Internal server error - Failed to update the student
+    delete:
+      tags: 
+        - student
+      summary: Delete a student by ID
+      operationId: deleteStudentById
+      parameters:
+        - name: id
+          in: path
+          description: ID of the student
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Student deleted successfully
+        '404':
+          description: Resource not found - Student with the specified ID not found
+        '500':
+          description: Internal server error - Failed to delete the student
+  /studentapp/v1/marks:
+    post:
+      summary: Create marks
+      tags: 
+        - marks
+      operationId: createMarks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Marks'
+      responses:
+        '201':
+          description: Marks created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Marks'
+        '400':
+          description: Bad request - Invalid input or missing required fields
+        '500':
+          description: Internal server error - Failed to create marks
+  /studentapp/v1/ranklist:
+    get:
+      summary: Get rank for the students
+      tags: 
+        - ranklist
+      operationId: getRankList
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Marks'
+        '500':
+          description: Internal server error - Failed to retrieve rank
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Marks:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          studentId:
+            type: string
+          marks:
+            type: integer
+          subject:
+            type: string
