@@ -77,6 +77,9 @@ Register the server and enter general and connection details and Save
 
 !![Alt text](/images/4.png)
 
+## Database sample structure
+
+!![Alt text](/images/table_structure)
 
     
 # API Endpoint Overview
@@ -84,12 +87,15 @@ Register the server and enter general and connection details and Save
 
 !![Alt text](/images/swagger.png)
 
+# Data Flow Diagram
+
+!![Alt text](/images/Data_flow_diagram.png)
 
 ## Entity relationship Diagram
 
 !![Alt text](/images/Entity-relationship-model.png)
 
-## Authors
+## Author
 
 - [@mrunal0504]
 
