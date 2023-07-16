@@ -95,11 +95,6 @@ Register the server and enter general and connection details and Save
 
 ![Alt text](/images/Entity-relationship-model.png)
 
-## Author
-
-- [@mrunal0504]
-
-
 
 ## Running Tests
 
@@ -112,3 +107,6 @@ After running the above command you should be able to see the below result
 
 ![Alt text](/images/testcases_screenshot.png)
 
+## Author
+
+- [@mrunal0504]
