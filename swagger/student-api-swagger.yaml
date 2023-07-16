@@ -159,6 +159,28 @@ paths:
                   $ref: '#/components/schemas/Marks'
         '500':
           description: Internal server error - Failed to retrieve rank
+  /studentapp/v1/health:
+    get:
+      summary: Health endpoint
+      tags: 
+        - health check
+      operationId: healthCheck
+      responses:
+        200:
+          description: OK
+        '500':
+          description: Internal server error - Failed to retrieve rank
+  /studentapp/v1/ready:
+    get:
+      summary: Readiness endpoint
+      tags: 
+        - health check
+      operationId: readinessCheck
+      responses:
+        200:
+          description: OK
+        '500':
+          description: Internal server error - Failed to retrieve rank
 components:
   schemas:
     Student:
