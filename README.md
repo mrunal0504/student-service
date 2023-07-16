@@ -75,21 +75,21 @@ Register the server and enter general and connection details and Save
 
 ![Alt text](/images/3.png)
 
-!![Alt text](/images/4.png)
+![Alt text](/images/4.png)
 
 ## Database sample structure
 
-!![Alt text](/images/table_structure.png)
+![Alt text](/images/table_structure.png)
 
     
 # API Endpoint Overview
 
 
-!![Alt text](/images/swagger.png)
+![Alt text](/images/swagger.png)
 
 # Data Flow Diagram
 
-!![Alt text](/images/Data_flow_diagram.png)
+![Alt text](/images/Data_flow_diagram.png)
 
 ## Entity relationship Diagram
 
