@@ -79,7 +79,7 @@ Register the server and enter general and connection details and Save
 
 ## Database sample structure
 
-!![Alt text](/images/table_structure)
+!![Alt text](/images/table_structure.png)
 
     
 # API Endpoint Overview
