@@ -71,9 +71,9 @@ If the credentials are correct, you will be redirected to the pgAdmin home page.
 Register the server and enter general and connection details and Save
 ```
 
-!![Alt text](/images/2.png)
+![Alt text](/images/2.png)
 
-!![Alt text](/images/3.png)
+![Alt text](/images/3.png)
 
 !![Alt text](/images/4.png)
 
@@ -93,7 +93,7 @@ Register the server and enter general and connection details and Save
 
 ## Entity relationship Diagram
 
-!![Alt text](/images/Entity-relationship-model.png)
+![Alt text](/images/Entity-relationship-model.png)
 
 ## Author
 
@@ -110,5 +110,5 @@ To run tests, run the following command
 ```
 After running the above command you should be able to see the below result
 
-!![Alt text](/images/testcases_screenshot.png)
+![Alt text](/images/testcases_screenshot.png)
 
