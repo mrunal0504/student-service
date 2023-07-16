@@ -3,21 +3,13 @@
 
 This project implements REST API's for managing student records and creating marks for students. It allows you to perform CRUD (Create, Read, Update, Delete) operations on student data and create marks for each student and rank them in order of their total marks and returns the rank of all the students.
 
-## Use Cases
-
-Use case 1: Create students  Endpoint : POST  /student
-
-Use case 2: Create marks for students POST /marks
-
-Use case 3: GET rank as well as total marks of all the students GET   /ranklist
-
 ## Installation 
 
 ```bash
  Clone the repository
- >> git clone <github_link_for_repo>
+ >> git clone https://github.com/mrunal0504/student-service.git
 
- >> cd student-details 
+ >> cd student-service 
 
  Configure the database connection settings in src/data-source.ts file.
 
@@ -73,161 +65,37 @@ Click on the "Login" button or press Enter.
 
 If the credentials are correct, you will be redirected to the pgAdmin home page.
 ```
-![Screenshot 1](https://drive.google.com/file/d/1Fi8AbpQ-f9948ziKi5lTP4QYdBmv6nrl/view?usp=drive_link)
+![Alt text](/images/1.png)
 
 ```bash
 Register the server and enter general and connection details and Save
 ```
 
-![Screenshot 2](https://drive.google.com/file/d/1sMo-Pt1lxbrBssE_vpvh3a5LW7PRzRJR/view?usp=drive_link)
+![Alt text](/images/2.png)
 
-![Screenshot 3](https://drive.google.com/file/d/1clbiLTm6qPmEHqkyIjiou1oS5Ev_1hap/view?usp=drive_link)
+![Alt text](/images/3.png)
 
-![Screenshot 4](https://drive.google.com/file/d/1Wc_zH1NZ5q3iQ52u3IF3VZQMLfHXvuFc/view?usp=drive_link)
+!![Alt text](/images/4.png)
 
+## Database sample structure
 
-
-
-
-
+!![Alt text](/images/table_structure.png)
 
     
-## API Endpoint Overview
+# API Endpoint Overview
 
 
-Detailed API specifitcation : <swagger_link>
+!![Alt text](/images/swagger.png)
 
-### GET all students
+# Data Flow Diagram
 
-  *Endpoint* : /students
+!![Alt text](/images/Data_flow_diagram.png)
 
-  *Description* : Retrieves a list of all students.
+## Entity relationship Diagram
 
-  *Response* : '200 OK'
+![Alt text](/images/Entity-relationship-model.png)
 
----
----
----
----
----
-
-### GET a specific student
-
-
-  *Endpoint* : GET /student/${id}
-
-  *Description* : Retrieves a specific student
-
-  *Response* : '200 OK'
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
----
----
----
----
----
-
-### POST  student
-
-**Endpoint** : POST /student
-
-  **Description** : Creates a new student
-
-  **Response** : '201 Created'
-
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. This is the student id |
-| `name` | `string` | **Required**. This is the student name |
-
----
----
----
----
----
-
-### Update student
-
-**Endpoint** : PUT /student/${id}
-
-  **Description** : Updates an existing student
-
-  **Response** : '201 Created'
-
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. This is the student id |
-
----
----
----
----
----
-
-### DELETE student
-
-**Endpoint** : DELETE /student/${id}
-
-  **Description** : Deletes an existing student
-
-  **Response** : '204 No Content'
-
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. This is the student id |
-
----
----
----
----
----
-
-### CREATE marks
-
-**Endpoint** : POST /marks
-
-  **Description** : Inserts marks
-
-  **Response** : '201 Created'
-
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `string` | **Required**. This is the student id |
-| `studentId` | `string` | **Required**. This is the student id |
-| `subject` | `string` | **Required**. This is the student id |
-| `marks` | `number` | **Required**. This is the student id |
-
----
----
----
----
----
----
-
-### GET Ranklist
-
-**Endpoint** : GET /ranklist
-
-  **Description** : Get the list of ranks of the students.
-
-  **Response** : '200 OK'
-
----
----
----
----
----
----
-
-
-## Authors
+## Author
 
 - [@mrunal0504]
 
@@ -240,3 +108,7 @@ To run tests, run the following command
 ```bash
   npm test
 ```
+After running the above command you should be able to see the below result
+
+![Alt text](/images/testcases_screenshot.png)
+
