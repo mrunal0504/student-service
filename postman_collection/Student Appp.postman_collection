@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "7ebfce8c-e025-44b2-89e4-40dc9089d66a",
+		"_postman_id": "51eb4189-fe12-4a72-9ba1-89a42638bb67",
 		"name": "Student App",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "9556493",
-		"_collection_link": "https://crimson-sunset-640223.postman.co/workspace/Mrunal~251ad259-1beb-40bf-9b2d-6f630e374bdd/collection/9556493-7ebfce8c-e025-44b2-89e4-40dc9089d66a?action=share&creator=9556493&source=collection_link"
+		"_exporter_id": "9556493"
 	},
 	"item": [
 		{
@@ -17,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Dan\"\r\n}",
+							"raw": "{\r\n   \"name\": \"Alice\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -41,12 +40,21 @@
 					"response": []
 				},
 				{
-					"name": "students",
+					"name": "marks",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\": \"1\",\r\n    \"subject\": \"Maths\",\r\n    \"marks\": \"98\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/studentapp/v1/students",
+							"raw": "http://localhost:3000/studentapp/v1/marks",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -55,7 +63,7 @@
 							"path": [
 								"studentapp",
 								"v1",
-								"students"
+								"marks"
 							]
 						}
 					},
@@ -78,6 +86,27 @@
 								"v1",
 								"student",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/studentapp/v1/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"studentapp",
+								"v1",
+								"students"
 							]
 						}
 					},
@@ -115,62 +144,6 @@
 					"response": []
 				},
 				{
-					"name": "student/{id}",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://localhost:3000/studentapp/v1/student/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"studentapp",
-								"v1",
-								"student",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "marks",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"studentId\": \"1\",\r\n    \"subject\": \"maths\",\r\n    \"marks\": \"98\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/studentapp/v1/marks",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"studentapp",
-								"v1",
-								"marks"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "ranklist",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -193,6 +166,32 @@
 								"studentapp",
 								"v1",
 								"ranklist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/studentapp/v1/student/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"studentapp",
+								"v1",
+								"student",
+								"1"
 							]
 						}
 					},
