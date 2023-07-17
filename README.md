@@ -59,7 +59,7 @@ Open your preferred web browser and enter http://127.0.0.1/login or http://local
 
 Press Enter to navigate to the specified URL,the pgAdmin login page should appear.
 
-Enter your user Id and password in the respective fields.
+Enter your user Id : user@domain.com and password : SuperSecret in the respective fields.
 
 Click on the "Login" button or press Enter.
 
