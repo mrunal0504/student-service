@@ -55,7 +55,7 @@ Fire the below commands on command prompt for setting up Postgres and PGAdmin
 ## Setting up the database
 
 ```bash
-Open your preferred web browser and enter http://127.0.0.1:5050 or http://localhost:5050 in the address bar.
+Open your preferred web browser and enter http://127.0.0.1/login or http://localhost/login in the address bar.
 
 Press Enter to navigate to the specified URL,the pgAdmin login page should appear.
 
