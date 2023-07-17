@@ -3,6 +3,12 @@
 
 This project implements REST API's for managing student records and creating marks for students. It allows you to perform CRUD (Create, Read, Update, Delete) operations on student data and create marks for each student and rank them in order of their total marks and returns the rank of all the students.
 
+## Pre-requisites 
+
+- Node.js 16.x.x
+- TypeScript globally or locally installed 
+- PostgreSQL installed and running
+
 ## Installation 
 
 ```bash
@@ -82,12 +88,12 @@ Register the server and enter general and connection details and Save
 ![Alt text](/images/table_structure.png)
 
     
-# API Endpoint Overview
+## API Endpoint Overview
 
 
 ![Alt text](/images/swagger_endpoints.png)
 
-# Data Flow Diagram
+## Data Flow Diagram
 
 ![Alt text](/images/Data_flow_diagram.png)
 
