@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "51eb4189-fe12-4a72-9ba1-89a42638bb67",
+		"_postman_id": "a7c65e7c-e060-48e3-89b1-7487ba2153a9",
 		"name": "Student App",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "9556493"
@@ -119,7 +119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"name\": \"Alice\"\r\n}",
+							"raw": "{\r\n   \"name\": \"Dan\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
