@@ -6,20 +6,32 @@ This project implements REST API's for managing student records and creating mar
 ## Pre-requisites 
 
 - Node.js 16.x.x
-- TypeScript globally or locally installed 
+- TypeScript globally or locally installed
+- Docker
 - PostgreSQL installed and running
 
 ## Installation 
 
+- Open the command prompt
+-  Clone the repository using the below command :
 ```bash
- Clone the repository
  >> git clone https://github.com/mrunal0504/student-service.git
 
  >> cd student-service 
+```
+- Configure the database connection settings in src/data-source.ts file.
 
- Configure the database connection settings in src/data-source.ts file.
+```bash
+The following values should be set in src/data-source.ts :
 
- Install the dependencies 
+type: "postgres" specifies that the database type is PostgreSQL. 
+host: "localhost" specifies the hostname or IP address of the database server.
+port: 5432 specifies the port number on which the database server is running.
+username: "postgres" and password: "mysecretpassword" provide the credentials for the database user.
+database: "postgres" specifies the name of the database to connect to.  
+```
+ - Install the dependencies 
+```bash
  >> npm install
 
 ```
@@ -34,7 +46,7 @@ Database used : PostgresSQL
 
 Administration and management tool for PostgreSQL : PGAdmin
 
-Fire the below command on command prompt
+Fire the below commands on command prompt for setting up Postgres and PGAdmin
 
 ```bash
 >> docker pull postgres
@@ -44,20 +56,6 @@ Fire the below command on command prompt
 
 
 ```
-
-```bash
-Configure the database connection settings in data-source.ts file in the source code.
-
-The following values should be set in data-source.ts :
-
-type: "postgres" specifies that the database type is PostgreSQL. 
-host: "localhost" specifies the hostname or IP address of the database server.
-port: 5432 specifies the port number on which the database server is running.
-username: "postgres" and password: "mysecretpassword" provide the credentials for the database user.
-database: "postgres" specifies the name of the database to connect to.
-
-```
-
 ## Setup the database
 
 ```bash
