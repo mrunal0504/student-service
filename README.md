@@ -35,11 +35,7 @@ database: "postgres" specifies the name of the database to connect to.
  >> npm install
 
 ```
-## Running the project
 
-```bash
-npm start
-```
 ## Configuration
 
 Database used : PostgresSQL
@@ -56,7 +52,7 @@ Fire the below commands on command prompt for setting up Postgres and PGAdmin
 
 
 ```
-## Setup the database
+## Setting up the database
 
 ```bash
 Open your preferred web browser and enter http://127.0.0.1:5050 or http://localhost:5050 in the address bar.
@@ -81,11 +77,12 @@ Register the server and enter general and connection details and Save
 
 ![Alt text](/images/4.png)
 
-## Sample table structure
+## Running the project
 
-![Alt text](/images/table_structure.png)
-
-    
+```bash
+npm start
+``` 
+   
 ## API Endpoint Overview
 
 
@@ -99,6 +96,9 @@ Register the server and enter general and connection details and Save
 
 ![Alt text](/images/Entity-relationship-model.png)
 
+## Sample table structure
+
+![Alt text](/images/table_structure.png)
 
 ## Running Tests
 
