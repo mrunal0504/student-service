@@ -59,7 +59,7 @@ export class StudentController {
         try {
             const result = await this.studentService.createStudent(student);
             logger.info("Inserted student data into the database successfully" + JSON.stringify(result))
-            response.status(201).json({ result });
+            response.status(201).json(result);
         } catch (error) {
             logger.error("An error occurred while attempting to insert the student data into the database for student" + error)
             response.status(500).json({ message: 'Internal Server Error' });
@@ -82,7 +82,7 @@ export class StudentController {
             }
             await this.studentService.updateStudent(id, name);
             logger.info("Updated student data in the database successfully");
-            response.status(200).json({ result: { id, name } });
+            response.status(200).json({ id, name });
         } catch (error) {
             logger.error("An error occurred while attempting to update the student data in the database: " + error);
             response.status(500).json({ message: 'Internal Server Error' });

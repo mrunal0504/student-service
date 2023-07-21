@@ -14,14 +14,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Student'
+              type: object
+              properties:
+                name:
+                  type: string
       responses:
         '201':
           description: Student created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Marks'
+                $ref: '#/components/schemas/Student'
         '400':
           description: Bad request - Invalid input or missing required fields
         '500':
@@ -40,7 +43,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Student'
+                  $ref: '#/components/schemas/StudentWithMarks'
         '404':
           description: Resource not found
         '500':
@@ -64,7 +67,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Student'
+                $ref: '#/components/schemas/StudentWithMarks'
         '404':
           description: Resource not found - No students available
         '500':
@@ -86,7 +89,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Student'
+              type: object
+              properties:
+                name:
+                  type: string
       responses:
         '200':
           description: Student updated successfully
@@ -156,7 +162,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Marks'
+                  $ref: '#/components/schemas/Rank'
         '500':
           description: Internal server error - Failed to retrieve rank
   /studentapp/v1/health:
@@ -169,7 +175,7 @@ paths:
         200:
           description: OK
         '500':
-          description: Internal server error - Failed to retrieve rank
+          description: Internal server error 
   /studentapp/v1/ready:
     get:
       summary: Readiness endpoint
@@ -180,7 +186,7 @@ paths:
         200:
           description: OK
         '500':
-          description: Internal server error - Failed to retrieve rank
+          description: Internal server error 
 components:
   schemas:
     Student:
@@ -190,16 +196,34 @@ components:
           type: string
         name:
           type: string
+    StudentWithMarks:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        marks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Marks'
     Marks:
-      type: array
-      items:
-        type: object
-        properties:
-          id:
-            type: string
-          studentId:
-            type: string
-          marks:
-            type: integer
-          subject:
-            type: string
+      type: object
+      properties:
+        id:
+          type: string
+        studentId:
+          type: string
+        marks:
+          type: integer
+        subject:
+          type: string
+    Rank:
+      type: object
+      properties:
+        studentName:
+          type: string
+        totalMarks:
+          type: integer
+        rank:
+          type: integer
