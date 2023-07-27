@@ -33,9 +33,7 @@ export class MarksController {
     try {
       const result = await this.marksService.createMarks(marksData);
       logger.info("Inserted marks of the student into the database successfully" + JSON.stringify(result))
-      response.status(201).json({
-        result
-      });
+      response.status(201).json(result);
     } catch (error) {
       logger.error("An error encountered while inserting the data into the database for marks : " + error);
       response.status(500).json({ message: 'Internal Server Error' });

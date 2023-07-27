@@ -65,20 +65,39 @@ export class StudentService {
             // Fetch students and calculate ranks
             const students = await this.studentRepository.find({ ...marksRelation })
             logger.info("The request received in the student service for fetching the students to get the rank")
-            students.sort((a, b) => calculateTotalMarks(b.marks) - calculateTotalMarks(a.marks))
-            const myArray: Rank[] = []
-            students.forEach((student, index) => {
+
+
+            const myArray: Rank[] = students.map((student) => {
+                const totalMarks = calculateTotalMarks(student.marks);
+                return new Rank(student.name, totalMarks, 0)
+            });
+
+            // Sort the myArray based on total marks in descending order
+            myArray.sort((a, b) => b.totalMarks - a.totalMarks);
+
+            // Assign ranks based on the sorted order
+            let prevMarks = 0
+            let prevRank = 0
+            myArray.forEach((student, index) => {
+                if (prevMarks == student.totalMarks) {
+                    student.rank = prevRank
+                }
+                else {
+                    student.rank = prevRank + 1;
+                }
+                prevMarks = student.totalMarks
+                prevRank = student.rank
                 logger.debug(
-                    `Rank: ${index + 1}, Name: ${student.name}, Total Marks: ${calculateTotalMarks(student.marks)}`
-                )
-                const rank = new Rank(student.name, calculateTotalMarks(student.marks), index + 1)
-                myArray.push(rank)
-            })
+                    `Rank: ${student.rank}, Name: ${student.studentName}, Total Marks: ${student.totalMarks}`
+                );
+            });
 
             //Function to calculate total marks of student
+
             function calculateTotalMarks(marks: Marks[]): number {
                 return marks.reduce((total, mark) => total + mark.marks, 0)
             }
+
             return myArray
         } catch (error) {
             logger.error("An error encountered while getting the rank list from the database ")
